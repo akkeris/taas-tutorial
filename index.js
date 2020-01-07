@@ -32,4 +32,10 @@ if (process.env.PORT) {
   setTimeout(() => console.log('Sleepy'), 300000)
 }
 
+// If FAIL is set, immediately fail. 
+// This is useful for testing.
+if (process.env.FAIL) {
+  process.exit(1);
+}
+
 test();
