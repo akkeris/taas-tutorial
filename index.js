@@ -26,4 +26,10 @@ async function test() {
   }
 }
 
+// Sleep for 5 minutes if PORT is set
+// This will allow the Akkeris release to be successful
+if (process.env.PORT) {
+  setTimeout(() => console.log('Sleepy'), 300000)
+}
+
 test();
