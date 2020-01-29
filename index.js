@@ -5,6 +5,10 @@ const axios = require('axios');
 const targetURL = process.env.TARGET_URL || "https://google.com/"
 
 async function test() {
+  // Add a 30s delay
+  if (process.env.SLEEPY) {
+    await new Promise(r => setTimeout(r, 30000));
+  }
   try {
     console.log(`Testing ${targetURL}...`)
     // Make an HTTP request to the target URL
